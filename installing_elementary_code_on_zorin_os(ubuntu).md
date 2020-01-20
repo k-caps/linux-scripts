@@ -47,3 +47,4 @@ ninja && sudo ninja install
 ```
 
 After this I could run it just fine, io.elementary.code from the terminal and as "Code" from the applications menu, just as in Elementary OS.    
+Running `apt autoremove` deleted granite and I had to build it again, `ninja && ninja install` in the git build directory
