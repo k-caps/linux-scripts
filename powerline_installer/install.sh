@@ -32,7 +32,7 @@ if [ -n "$(which apt)" ]; then
       . /usr/share/powerline/bindings/bash/powerline.sh
     fi
 EOF
-else  [ -n "$(which dnf)" ]; then
+else  [ -n "$(which dnf)" ]
   cat >> ~/.bashrc << EOF
     if [ -f `which powerline-daemon` ]; then
       powerline-daemon -q
