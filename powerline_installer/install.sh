@@ -3,11 +3,12 @@
 # Hack font:
 # If the script fails to install the font you can just download and install it manually from the link
   # (Modern distros can often install the .ttf file simply by doubleclicking it)
+mkdir ~/.pline_install 
+cd ~/.pline_install
 git clone https://github.com/k-caps/Hackfont-serve.git
 cd ./Hackfont-serve/
 mkdir -p ~/.fonts
 mv 'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
-rm -rf ../Hackfont-serve/
 fc-cache -fv ~/.fonts/
 
 # packages:
@@ -56,4 +57,6 @@ set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 EOF
+cd ~
+rm -rf ~/.pline_install/
 bash
