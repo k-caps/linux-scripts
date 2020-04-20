@@ -31,7 +31,7 @@ if [ -n "$(which apt)" ]; then
       POWERLINE_BASH_SELECT=1
       . /usr/share/powerline/bindings/bash/powerline.sh
     fi
-   EOF
+EOF
 else  [ -n "$(which dnf)" ]; then
   cat >> ~/.bashrc << EOF
     if [ -f `which powerline-daemon` ]; then
@@ -40,7 +40,7 @@ else  [ -n "$(which dnf)" ]; then
       POWERLINE_BASH_SELECT=1
       . /usr/share/powerline/bash/powerline.sh
     fi
-   EOF
+EOF
 fi    
 # vim:
 cat >> ~/.vimrc << EOF
@@ -54,7 +54,6 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=25
+set t_Co=256
 EOF
-
-source ~/.bashrc
+bash
