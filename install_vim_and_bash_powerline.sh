@@ -10,7 +10,7 @@ fc-cache -fv
 
 # Now you neeeed to update your terminal app to use this font called "Hack Regular"
 
-sudo apt install -y powerline
+sudo pip install git+git://github.com/Lokaltog/powerline
 # bash:
 cat >> ~/.bashrc << EOF
 if [ -f `which powerline-daemon` ]; then
@@ -23,10 +23,6 @@ EOF
 
 # vim:
 cat >> /etc/vim/vimrc << EOF
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline
