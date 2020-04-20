@@ -3,9 +3,10 @@
 # Hack font:
 # (Modern distros can often install the .ttf file simply by doubleclicking it)
 wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
-mkdir -p ~/.local/share/fonts
-mv 'Hack Regular Nerd Font Complete.ttf' ~/.local/share/fonts/
-fc-cache -f -v
+mkdir -p ~/.fonts
+mv 'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
+fc-cache -fv
+
 
 # Now you neeeed to update your terminal app to use this font called "Hack Regular"
 
@@ -22,6 +23,10 @@ EOF
 
 # vim:
 cat >> /etc/vim/vimrc << EOF
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline
