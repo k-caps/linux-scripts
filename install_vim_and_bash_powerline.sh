@@ -11,7 +11,7 @@ cd ./Hackfont-serve/
   # https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
 mkdir -p ~/.fonts
 mv 'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
-rm -f ../Hackfont-serve/
+rm -rf ../Hackfont-serve/
 fc-cache -fv ~/.fonts/
 
 # Now you neeeed to update your terminal app to use this font that we just installed, called "Hack Regular"
