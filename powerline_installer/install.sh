@@ -13,10 +13,10 @@ fc-cache -fv ~/.fonts/
 # packages:
 if [ -n "$(which apt)" ]; then
   sudo apt update
-  sudo apt-get install python-pip git powerline
+  sudo apt install -y python-pip git powerline
 elif [ -n "$(which dnf)" ]; then
   sudo dnf update
-  sudo dnf install powerline
+  sudo dnf install -y powerline
 else
   echo Install the following packages and then manually continue the script from this point:
   echo powerline git python-pip
