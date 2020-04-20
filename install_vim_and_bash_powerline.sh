@@ -9,7 +9,9 @@ fc-cache -fv
 
 
 # Now you neeeed to update your terminal app to use this font called "Hack Regular"
-
+# packages UBUNTU ONLY:
+sudo apt update
+sudo apt-get install python-pip git
 sudo pip install git+git://github.com/Lokaltog/powerline
 # bash:
 cat >> ~/.bashrc << EOF
@@ -17,7 +19,7 @@ if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bindings/bash/powerline.sh
+  . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 EOF
 
