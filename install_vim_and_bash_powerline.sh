@@ -3,14 +3,15 @@
 # Hack font:
 # If the script fails to install the font you can just download and install it manually from the link
   # (Modern distros can often install the .ttf file simply by doubleclicking it)
-wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf\?raw\=true && \
-mv 'Hack Regular Nerd Font Complete.ttf?raw=true' 'Hack Regular Nerd Font Complete.ttf'
+git clone https://github.com/k-caps/Hackfont-serve.git
+cd ./Hackfont-serve/
 
 # For manual download you can click this drive link or download from the official git repository:
   # https://drive.google.com/file/d/1rKGE8jbO5iJPtatJPKqQ8rvT0BqlmfN8/view?usp=sharing
   # https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
 mkdir -p ~/.fonts
 mv 'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
+rm -rf ../Hackfont-serve/
 fc-cache -fv ~/.fonts/
 
 # Now you neeeed to update your terminal app to use this font that we just installed, called "Hack Regular"
