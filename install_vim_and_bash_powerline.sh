@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Hack font:
+# (Modern distros can often install the .ttf file simply by doubleclicking it)
 wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
 mkdir -p ~/.local/share/fonts
 mv 'Hack Regular Nerd Font Complete.ttf' ~/.local/share/fonts/
