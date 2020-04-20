@@ -9,7 +9,7 @@ fc-cache -f -v
 
 # Now you neeeed to update your terminal app to use this font called "Hack Regular"
 
-sudo apt install powerline
+sudo apt install -y powerline
 # bash:
 cat >> ~/.bashrc << EOF
 if [ -f `which powerline-daemon` ]; then
