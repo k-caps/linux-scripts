@@ -14,9 +14,18 @@ mv 'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
 fc-cache -fv ~/.fonts/
 
 # Now you neeeed to update your terminal app to use this font that we just installed, called "Hack Regular"
-# packages UBUNTU ONLY:
-sudo apt update
-sudo apt-get install python-pip git powerline
+
+# packages:
+if [ -n "$(which apt)" ]; then
+  sudo apt update
+  sudo apt-get install python-pip git powerline
+elif [ -n "$(which dnf)" ]; then
+  sudo dnf update
+  sudo dnf install powerline
+else
+  echo Install the following packages and then manually continue the script from this point:
+  echo powerline git python-pip
+fi
 pip install --user git+git://github.com/Lokaltog/powerline
 # bash:
 cat >> ~/.bashrc << EOF
