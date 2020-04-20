@@ -23,18 +23,27 @@ else
 fi
 pip install --user git+git://github.com/Lokaltog/powerline
 # bash:
-cat >> ~/.bashrc << EOF
-
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bindings/bash/powerline.sh
-fi
-EOF
-
+if [ -n "$(which apt)" ]; then
+  cat >> ~/.bashrc << EOF
+    if [ -f `which powerline-daemon` ]; then
+      powerline-daemon -q
+      POWERLINE_BASH_CONTINUATION=1
+      POWERLINE_BASH_SELECT=1
+      . /usr/share/powerline/bindings/bash/powerline.sh
+    fi
+   EOF
+else  [ -n "$(which dnf)" ]; then
+  cat >> ~/.bashrc << EOF
+    if [ -f `which powerline-daemon` ]; then
+      powerline-daemon -q
+      POWERLINE_BASH_CONTINUATION=1
+      POWERLINE_BASH_SELECT=1
+      . /usr/share/powerline/bash/powerline.sh
+    fi
+   EOF
+fi    
 # vim:
-cat >> /etc/vim/vimrc << EOF
+cat >> ~/.vimrc << EOF
 
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
