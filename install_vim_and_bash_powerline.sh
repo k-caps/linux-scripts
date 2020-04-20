@@ -5,7 +5,7 @@
 wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
 mkdir -p ~/.fonts
 mv 'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
-fc-cache -fv
+fc-cache -fv ~/.fonts/
 
 # Now you neeeed to update your terminal app to use this font called "Hack Regular"
 # packages UBUNTU ONLY:
