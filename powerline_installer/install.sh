@@ -15,12 +15,13 @@ fc-cache -fv ~/.fonts/
 if [ -n "$(which apt)" ]; then
   sudo apt update
   sudo apt install -y python-pip git powerline
-elif [ -n "$(which dnf)" ]; then
-  sudo dnf update
-  sudo dnf install -y powerline
+elif [ -n "$(which yum)" ]; then
+  sudo yum update
+  sudo yum install -y powerline
 else
   echo Install the following packages and then manually continue the script from this point:
   echo powerline git python-pip
+  exit
 fi
 pip install --user git+git://github.com/Lokaltog/powerline
 # bash:
