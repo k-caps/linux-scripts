@@ -17,7 +17,7 @@ if [ -n "$(which apt)" ]; then
   sudo apt install -y python-pip git powerline
 elif [ -n "$(which yum)" ]; then
   sudo yum update
-  sudo yum install -y powerline
+  sudo yum install -y python-pip git powerline
 else
   echo Install the following packages and then manually continue the script from this point:
   echo powerline git python-pip
@@ -34,7 +34,7 @@ if [ -n "$(which apt)" ]; then
       . /usr/share/powerline/bindings/bash/powerline.sh
     fi
 EOF
-else  [ -n "$(which dnf)" ]
+else  [ -n "$(which yum)" ]
   cat >> ~/.bashrc << EOF
     if [ -f `which powerline-daemon` ]; then
       powerline-daemon -q
