@@ -17,7 +17,7 @@ if [ -n "$(which apt)" ]; then
   sudo apt update
   sudo apt install -y python-pip git powerline
 elif [ -n "$(which yum)" ]; then
-  echo echo fedora/rhel/centos detected, using yum
+  echo fedora/rhel/centos detected, using yum
   sudo yum update
   sudo yum install -y python-pip git powerline
 else
