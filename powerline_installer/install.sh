@@ -13,11 +13,11 @@ fc-cache -fv ~/.fonts/
 
 # packages:
 if [ -n "$(which apt)" ]; then
-  echo *buntu detected, using apt
+  printf  "\n*buntu detected, using apt\n"
   sudo apt update
   sudo apt install -y python-pip git powerline
 elif [ -n "$(which yum)" ]; then
-  echo fedora/rhel/centos detected, using yum
+  printf "\nfedora/rhel/centos detected, using yum\n"
   sudo yum update
   sudo yum install -y python-pip git powerline
 else
