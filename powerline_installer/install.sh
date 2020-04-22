@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# Hack font:
-# If the script fails to install the font you can just download and install it manually from the link
-  # (Modern distros can often install the .ttf file simply by doubleclicking it)
-mkdir ~/.pline_install 
-cd ~/.pline_install
-git clone https://github.com/k-caps/Hackfont-serve.git
-cd ./Hackfont-serve/
-mkdir -p ~/.fonts
-mv 'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
-fc-cache -fv ~/.fonts/
-
 # packages:
 if [ -n "$(which apt)" ]; then
   printf  "\n\n*buntu detected, using apt\n\n"
@@ -25,7 +14,26 @@ else
   echo powerline git python-pip
   exit
 fi
-pip install --user git+git://github.com/Lokaltog/powerline
+# if powerline was not installed correctly via package manager
+if [ -z "$(which powerline)" ]; then
+  # if pip was installed attempt pip installation of powerline
+  if [ -n "$(which python-pip)" ]; then
+    pip install --user git+git://github.com/Lokaltog/powerline
+  else
+    # fallback to manual and unsupported git installation
+    git clone https://github.com/powerline/fonts.git
+  fi
+fi  
+# Hack font:
+# If the script fails to install the font you can just download and install it manually from the link
+  # (Modern distros can often install the .ttf file simply by doubleclicking it)
+mkdir ~/.pline_install 
+cd ~/.pline_install
+git clone https://github.com/k-caps/Hackfont-serve.git
+mkdir -p ~/.fonts
+mv ./Hackfont-serve/'Hack Regular Nerd Font Complete.ttf' ~/.fonts/
+fc-cache -fv ~/.fonts/
+
 # bash:
 if [ -n "$(which apt)" ]; then
   cat >> ~/.bashrc << EOF
