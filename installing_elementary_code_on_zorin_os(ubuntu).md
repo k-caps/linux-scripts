@@ -1,7 +1,7 @@
 # Installing elementary code on Zorin OS #     
 (Should be the same for any ubuntu system) 
 
-As explained in the offical github page for elementary code, you need a granite 5.2.0 oe above. Problem is, installing from apt doesn't get you a high enough version. Installing from a deb file might not work either. So...    
+As explained in the offical github page for elementary code, you need  granite 5.2.0 or above. Problem is, installing from apt doesn't get you a high enough version. Installing from a deb file might not work either. So...    
 `Dependency granite found: NO found '0.5' but need: '>= 5.2.0'`
 `meson.build:17:0: ERROR: Invalid version of dependency, need 'granite' ['>= 5.2.0'] found '0.5'.`
 
